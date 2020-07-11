@@ -99,11 +99,16 @@ jobs:
           # 
 
           # 编译x64固件:
-          # cat >> .config <<EOF
+          cat >> .config <<EOF
+          CONFIG_TARGET_bcm27xx=y
+          CONFIG_TARGET_bcm27xx_bcm2711=y
+          CONFIG_TARGET_bcm27xx_bcm2711_DEVICE_rpi-4=y
+          CONFIG_TARGET_ROOTFS_PARTSIZE=300
           # CONFIG_TARGET_x86=y
           # CONFIG_TARGET_x86_64=y
           # CONFIG_TARGET_x86_64_Generic=y
-          # EOF
+          EOF
+          
 
           # 固件压缩:
           # cat >> .config <<EOF
